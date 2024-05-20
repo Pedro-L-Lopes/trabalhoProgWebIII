@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xis</title>
+    <!-- Javascript -->
+    <script src="js/script.js" defer></script>
+    <!-- Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="flex">
+      <!-- Sidebar -->
+      <div class="h-screen p-3 flex flex-col mt-1 w-1/4">
+        <!-- Logo -->
+        <div class="mb-6 flex items-center gap-2 font-bold text-xl">
+          <img
+            src="./images/hamburguer-de-queijo.png"
+            alt="Logo"
+            class="w-12"
+          />
+          <h1>Xis</h1>
+        </div>
+        <!-- Navigation Links -->
+        <nav class="flex flex-col mb-4 text-2xl font-medium">
+          <a
+            class="mb-3 flex items-center text-black hover:text-black hover:opacity-75 p-2 hover:no-underline hover:bg-gray-50 rounded-full transition-all"
+            href="#"
+          >
+            <i class="bi bi-house mr-2"></i>Página Inicial
+          </a>
+          <a
+            class="mb-3 flex items-center text-black hover:text-black hover:opacity-75 p-2 hover:no-underline hover:bg-gray-50 rounded-full transition-all"
+            href="#"
+          >
+            <i class="bi bi-search mr-2"></i>Explorar
+          </a>
+          <a
+            class="mb-3 flex items-center text-black hover:text-black hover:opacity-75 p-2 hover:no-underline hover:bg-gray-50 rounded-full transition-all"
+            href="#"
+          >
+            <i class="bi bi-bell mr-2"></i>Notificações
+          </a>
+          <a
+            class="mb-3 flex items-center text-black hover:text-black hover:opacity-75 p-2 hover:no-underline hover:bg-gray-50 rounded-full transition-all"
+            href="#"
+          >
+            <i class="bi bi-bookmark mr-2"></i>Itens Salvos
+          </a>
+          <a
+            class="mb-3 flex items-center text-black hover:text-black hover:opacity-75 p-2 hover:no-underline hover:bg-gray-50 rounded-full transition-all"
+            href="#"
+          >
+            <i class="bi bi-person mr-2"></i>Perfil
+          </a>
+          <a
+            class="mb-3 flex items-center text-black hover:text-black hover:opacity-75 p-2 hover:no-underline hover:bg-gray-50 rounded-full transition-all"
+            href="#"
+          >
+            <i class="bi bi-three-dots mr-2"></i>Mais
+          </a>
+        </nav>
+        <!-- Post Button -->
+        <button
+          class="mb-4 bg-blue-500 text-white py-2 px-4 w-full hover:bg-blue-400 rounded-full transition-all"
+        >
+          Postar
+        </button>
+        <!-- Profile -->
+        <div
+          class="mt-auto flex items-center gap-2 hover:bg-gray-50 hover:opacity-75 rounded-full cursor-pointer"
+        >
+          <img
+            src="images/profile.jpg"
+            alt="Profile"
+            class="w-12 h-12 rounded-full"
+          />
+          <div>
+            <strong>Crebin</strong>
+            <p class="text-sm text-gray-600 opacity-75">@creindograu</p>
+          </div>
+        </div>
+      </div>
+      <!-- Main Content -->
+      <main class="w-2/4 border">
+        <!-- Para você \ Seguindo -->
+        <nav class="flex items-center justify-between mx-44 mt-2">
+          <h2
+            class="text-xl font-bold border-b-4 rounded-sm border-blue-500 cursor-pointer hover:opacity-75 transition-all"
+          >
+            Para você
+          </h2>
+          <h2
+            class="text-xl font-semibold cursor-pointer hover:opacity-75 transition-all"
+          >
+            Seguindo
+          </h2>
+        </nav>
+        <!-- Text Input -->
+        <div class="border-b-2">
+          <form id="postForm" class="flex flex-col m-4">
+            <div class="flex gap-2">
+              <img
+                src="images/profile.jpg"
+                alt="Profile"
+                class="w-12 h-12 rounded-full"
+              />
+              <input
+                type="text"
+                id="postContent"
+                class="w-full mb-2 text-xl border-b focus:outline-none"
+                placeholder="O que está acontecendo?"
+              />
+            </div>
+            <!-- Post Button -->
+            <div class="flex justify-end -mt-4 p-2">
+              <button
+                type="submit"
+                class="bg-blue-500 text-white py-2 px-4 mt-2 hover:bg-blue-400 rounded-full transition-all"
+              >
+                Postar
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- Post Container -->
+        <div id="postContainer" class="mt-4"></div>
+      </main>
+    </div>
+  </body>
+</html>
