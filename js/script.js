@@ -6,13 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (postContent.trim() === "") return;
 
     var postDiv = document.createElement("div");
-    postDiv.className = "card mb-3"; // Bootstrap classes
+    postDiv.className = "bg-white shadow-md rounded-lg mb-3 p-4"; // Tailwind CSS classes
 
     var cardBodyDiv = document.createElement("div");
-    cardBodyDiv.className = "card-body flex flex-col"; // Tailwind CSS classes
+    cardBodyDiv.className = "flex flex-col"; // Tailwind CSS classes
 
     var userFlexDiv = document.createElement("div");
-    userFlexDiv.className = "flex items-center"; // Tailwind CSS classes
+    userFlexDiv.className = "flex items-center mb-3"; // Tailwind CSS classes
 
     var userImg = document.createElement("img");
     userImg.src = "images/profile.jpg"; // Caminho da imagem do usuário
@@ -27,20 +27,22 @@ document.addEventListener("DOMContentLoaded", function () {
     cardBodyDiv.appendChild(userFlexDiv);
 
     var postText = document.createElement("p");
-    postText.className = "card-text ml-10 ";
+    postText.className = "ml-14"; // Tailwind CSS classes (ml-14 para espaçamento similar ao original)
     postText.textContent = postContent;
 
     cardBodyDiv.appendChild(postText);
 
     var buttonFlexDiv = document.createElement("div");
-    buttonFlexDiv.className = "flex justify-start"; // Tailwind CSS classes
+    buttonFlexDiv.className = "flex justify-start mt-3"; // Tailwind CSS classes
 
     var likeButton = document.createElement("button");
-    likeButton.className = "btn btn-sm btn-outline-primary like-button mr-2"; // Bootstrap classes
+    likeButton.className =
+      "w-10 h-10 text-blue-500 hover:bg-blue-100 rounded-full hover:text-blue-700 mr-2 like-button transition-all"; // Tailwind CSS classes
     likeButton.innerHTML = '<i class="bi bi-heart"></i>'; // Ícone de curtir.
 
     var deleteButton = document.createElement("button");
-    deleteButton.className = "btn btn-sm btn-outline-danger delete-post"; // Bootstrap classes
+    deleteButton.className =
+      "w-10 h-10 text-red-500 hover:bg-red-100 rounded-full hover:text-red-700 delete-post transition-all"; // Tailwind CSS classes
     deleteButton.innerHTML = '<i class="bi bi-x"></i>'; // Ícone de deletar.
 
     buttonFlexDiv.appendChild(likeButton);
@@ -55,14 +57,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Adiciona o event listener diretamente ao document, pois os botões são criados dinamicamente
   document.addEventListener("click", function (event) {
-    if (event.target.classList.contains("like-button")) {
+    var targetElement = event.target;
+
+    if (targetElement.closest(".like-button")) {
       // Tenta encontrar o ícone dentro do botão para alternar classes
-      var likeIcon = event.target.querySelector("i");
+      var likeIcon = targetElement.closest(".like-button").querySelector("i");
       likeIcon.classList.toggle("bi-heart");
       likeIcon.classList.toggle("bi-heart-fill");
     }
-    if (event.target.classList.contains("delete-post")) {
-      event.target.closest(".card").remove();
+
+    if (targetElement.closest(".delete-post")) {
+      targetElement.closest(".bg-white.shadow-md.rounded-lg.mb-3.p-4").remove();
     }
   });
 });
